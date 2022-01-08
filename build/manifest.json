@@ -1,0 +1,26 @@
+{
+  "short_name": "Awlira",
+  "name": "The Awlira Company is a pioneer in this field where we have the expertise and tools that qualify us to be the optimal solution for your company or factory",
+  "homepage": "./",
+  "icons": [
+    {
+      "src": "/img/logo/icon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/img/logo/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/logo/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
