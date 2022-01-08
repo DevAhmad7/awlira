@@ -1,0 +1,73 @@
+@import "../../../styles/config";
+
+// style for header
+.awlira-process {
+    width: 100%;
+    height: auto;
+    background-color: colors(back1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 75px 0;
+
+    & > h1 {
+        @include head("our process");
+    }
+
+    .process-items {
+        width: 100%;
+        height: auto;
+        padding: 2em 0;
+        background-color: #f0f0f0;
+        @include flexDisplay();
+
+        .container {
+            @include flexDisplay();
+            flex-wrap: wrap;
+
+            .item {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                padding: 1em;
+                position: relative;
+                @include flexDisplay();
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    padding: 1em;
+                }
+
+                .overlay {
+                    z-index: 2;
+                    width: 100px;
+                    height: 85px;
+                    @include flexDisplay(column);
+                    justify-content: flex-start;
+                    position: relative;
+                    left: -7px;
+
+                    h1 {
+                        width: 79px;
+                        color: colors(back2);
+                        text-transform: capitalize;
+                        text-align: left;
+                        @include font(1em, 1.25);
+                    }
+
+                    p {
+                        width: 79px;
+                        height: 60px;
+                        color: colors(back2);
+                        text-transform: lowercase;
+                        text-align: left;
+                        overflow: hidden;
+                        @include fontLit(0.8em, 1.25);
+                    }
+                }
+            }
+        }
+    }
+}

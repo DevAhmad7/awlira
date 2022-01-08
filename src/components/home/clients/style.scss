@@ -1,0 +1,70 @@
+@import "../../../styles/config";
+
+// style for header
+.awlira-clients {
+    width: 100%;
+    height: auto;
+    background-color: colors(back1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 75px 0;
+
+    & > h1 {
+        @include head("our clients");
+    }
+
+    p {
+        padding: 0.5rem;
+        max-width: 600px;
+        opacity: 0.57;
+        @include fontLit(1.3em, 1.32);
+        font-weight: 300;
+        text-align: center;
+        color: #000000;
+
+        @include media(phone) {
+            max-width: 300px;
+        }
+    }
+
+    .clients-items {
+        width: 100%;
+        height: auto;
+        padding: 2em 0;
+        @include flexDisplay();
+
+        .container {
+            @include flexDisplay();
+            flex-wrap: wrap;
+
+            .item {
+                width: 173px;
+                height: 160px;
+                border-radius: 10px;
+                background-color: #f8f8f8;
+                @include flexDisplay();
+
+                img {
+                    width: 80%;
+                }
+            }
+            .rec-dot {
+                background-color: colors(back2);
+                height: 7px;
+                width: 18px;
+                margin: 4px 12px;
+                border-radius: 1px;
+                border: 0px;
+                box-shadow: none;
+            }
+            .rec-dot_active {
+                background-color: colors(clr1);
+            }
+            button.rec-arrow {
+                display: none !important;
+            }
+        }
+    }
+}

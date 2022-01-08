@@ -1,0 +1,60 @@
+/* Google Fonts your are selected it */
+@import url('https://fonts.googleapis.com/css?family=Righteous|Iceland|Ubuntu|VT323|');
+/* created By Ahmad Hasan */
+@font-face{
+	font-family:'GroldRounded';
+	src: url("/fonts/fontReg.OTF")
+}
+@font-face{
+	font-family:'GroldLight';
+	src: url("/fonts/fontLit.OTF")
+}
+/* defualt settings */
+*{
+padding: 0px;
+margin: 0px;
+-webkit-transition: none;
+-o-transition: none;
+transition: none;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+outline: none;
+border: 0px;
+text-decoration: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+-ms-user-select: none;
+    user-select: none;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+-o-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar {width: 4px;}
+*::-webkit-scrollbar-track {background: #ffffff;}
+*::-webkit-scrollbar-thumb {background-color: #cfcfcf;border-radius: 4px;}
+*::-o-scrollbar {width: 4px;}
+*::-o-scrollbar-track {background: #ffffff;}
+*::-o-scrollbar-thumb {background-color: #cfcfcf;border-radius: 4px;}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* for body */
+body{
+    overflow-y: overlay;
+}
+
+.container {
+    width: 85%;
+    height: auto;
+}

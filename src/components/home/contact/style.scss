@@ -1,0 +1,67 @@
+@import '../../../styles/config';
+
+// style for header
+.awlira-contact {
+    width: 100%;
+    height: auto;
+    background-color: colors(back2);
+    background-image: url('/img/logo/icon.png');
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position-x: -40px;
+    @include flexDisplay();
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 2.5em 0;
+
+        .contact-info {
+            @include flexDisplay(column);
+            
+            h1 {
+                color: colors(back1);
+                text-transform: uppercase;
+                text-align: center;
+                padding: 0.5rem;
+                @include font(2.2em);
+            }
+
+            p {
+                color: colors(back1);
+                text-align: center;
+                padding: 0.5rem;
+                max-width: max-content;
+                opacity: 0.67;
+                @include fontLit(1em);
+
+                @include media(phone) {
+                    text-align: left;
+                }
+            }
+        }
+
+        a {
+            margin: 30px 0;
+            width: 322px;
+            height: 82px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            color: colors(back1);
+            background-color: colors(clr1);
+            @include flexDisplay();
+            @include fontLit(1.5em, 1.32);
+            text-align: left;
+        }
+
+        @include media(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    @include media(tablet) {
+        background-size: 25%;
+    }
+}

@@ -1,0 +1,25 @@
+@import '../styles/config';
+
+$htL: 70px;
+$htT: 60px;
+$htP: 50px;
+
+.App {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    @include flexDisplay(column);
+}
+
+.awlira-home {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: $htL;
+    @include media(tablet) {
+        margin-top: $htT;
+    }
+    @include media(phone) {
+        margin-top: $htP;
+    }
+}

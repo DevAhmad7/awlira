@@ -1,0 +1,303 @@
+@import "../../styles/config";
+// varbels
+
+$htL: 70px;
+$htT: 60px;
+$htP: 50px;
+
+.awlira-spacer {
+    flex: 1;
+}
+
+.flexDisplay {
+    @include flexDisplay();
+}
+// style for nav
+.awlira-nav {
+    width: 100%;
+    height: $htL;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 7;
+    background-color: colors(back1);
+    border-bottom: 1px solid #dedede;
+    transition: all 0.25s;
+    @include flexDisplay();
+
+    &.active {
+        border-bottom: 1px solid #f0f0f01a;
+        background-color: #0f2944;
+
+        .container .navList-outer {
+            .navList-inner .nav-navigation {
+                .nav-link a,
+                .nav-link .dropButton {
+                    color: colors(back1);
+                }
+                .drop .dropIcon {
+                    border-top-color: colors(back1);
+                }
+            }
+
+            .list-icon span {
+                background-color: colors(back1);
+            }
+            .list-icon::before {
+                background-color: colors(back1);
+            }
+            .list-icon::after {
+                background-color: colors(back1);
+            }
+        }
+    }
+    .container {
+        &.flexDisplay {
+            justify-content: space-between;
+        }
+        .nav-logo {
+            width: 145px;
+            @include flexDisplay();
+
+            .logo {
+                width: 100%;
+            }
+
+            @include media(tablet) {
+                width: 120px;
+            }
+            @include media(phone) {
+                width: 100px;
+            }
+        }
+        .navList-outer {
+            width: auto;
+            height: auto;
+            @include flexDisplay();
+            justify-content: flex-end;
+
+            .list-icon {
+                width: 35px;
+                height: 20px;
+                position: relative;
+                display: none;
+                background: none;
+                top: 0px;
+                left: 0px;
+                transition: 0.3s ease-in-out;
+
+                span {
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: colors(back2);
+                    transition: 0.3s ease-in-out;
+                }
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: colors(back2);
+                    position: absolute;
+                    top: 0px;
+                    transition: 0.3s ease-in-out;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: colors(back2);
+                    position: absolute;
+                    bottom: 0px;
+                    transition: 0.3s ease-in-out;
+                }
+
+                &.active {
+                    span {
+                        opacity: 0;
+                    }
+                    &::before {
+                        background-color: colors(clr1);
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                    &::after {
+                        background-color: colors(clr1);
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+
+                @include media(tablet) {
+                    @include flexDisplay(column);
+                }
+            }
+
+            .navList-inner {
+                width: auto;
+                height: auto;
+                @include flexDisplay();
+
+                .nav-navigation {
+                    width: auto;
+                    height: auto;
+                    @include flexDisplay();
+
+                    .nav-link {
+                        width: 10rem;
+                        text-align: center;
+                        position: relative;
+                        top: 0px;
+
+                        a,
+                        .dropButton {
+                            text-transform: uppercase;
+                            letter-spacing: normal;
+                            @include fontLit(1.2em, 1.29);
+                            text-align: left;
+                            color: #0e2741;
+
+                            &:hover,
+                            &.active {
+                                color: colors(clr1);
+                            }
+                        }
+
+                        .dropButton {
+                            background: none;
+                        }
+
+                        .nav-dropdown {
+                            position: absolute;
+                            background: colors(back2);
+                            @include flexDisplay(column);
+                            z-index: 2;
+                            top: 30px;
+                            left: 0px;
+                            right: 0px;
+                            overflow: hidden;
+                            border-radius: 4px;
+                            transition: 0.3s ease-in-out;
+
+                            a {
+                                text-transform: capitalize;
+                                text-align: left;
+                                @include fontLit(1em);
+                                color: colors(back1);
+                                padding: 10px 5px;
+
+                                &:hover,
+                                &.active {
+                                    color: colors(clr1);
+                                }
+                            }
+
+                            @include media(tablet) {
+                                padding-left: 40px;
+                                background: none;
+                                position: relative;
+                                top: 10px;
+                                width: 100%;
+                                border-radius: 0px;
+                                align-items: flex-start;
+
+                                a {
+                                    color: colors(back1);
+                                }
+                            }
+                        }
+
+                        @include media(laptop) {
+                            width: 8em;
+                            a {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+
+                    .drop {
+                        .dropIcon {
+                            background: none;
+                            margin: 0 5px;
+                            font-size: 1.1rem;
+                            border: 6px solid transparent;
+                            border-top-color: colors(back2);
+                            cursor: pointer;
+                            position: relative;
+                            top: -2px;
+                        }
+
+                        &:hover .dropIcon {
+                            border-top-color: colors(clr1);
+                        }
+                    }
+
+                    @include media(tablet) {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: self-end;
+                        flex-direction: column;
+                        background-color: colors(back2);
+                        width: 75%;
+                        height: 100%;
+                        box-shadow: 1px 0px 3px #112233;
+
+                        .nav-link {
+                            width: 100%;
+                            height: auto;
+                            padding: 15px 20px;
+                            @include flexDisplay(column);
+                            align-items: flex-start;
+
+                            a,
+                            .dropButton {
+                                padding: 0 15px;
+                                color: colors(back1);
+                            }
+                        }
+
+                        .drop {
+                            .dropIcon {
+                                border-top-color: colors(back1);
+                            }
+                        }
+                    }
+                }
+
+                @include media(tablet) {
+                    background-color: none;
+                    position: fixed;
+                    top: $htT;
+                    left: -100vh;
+                    width: 100%;
+                    height: calc(100vh - #{$htT});
+                    justify-content: flex-start;
+                    align-items: self-end;
+                    flex-direction: column;
+                    transition: 0.3s ease-in-out;
+
+                    &.active {
+                        left: 0px;
+                        z-index: 9999;
+                    }
+                }
+                @include media(phone) {
+                    top: $htP;
+                    width: 100%;
+                    height: calc(100vh - #{$htP});
+                }
+            }
+        }
+    }
+
+    @include media(tablet) {
+        height: $htT;
+    }
+    @include media(phone) {
+        height: $htP;
+    }
+}

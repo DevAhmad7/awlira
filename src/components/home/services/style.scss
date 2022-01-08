@@ -1,0 +1,91 @@
+@import "../../../styles/config";
+// style for header
+.awlira-services-info {
+    width: 100%;
+    height: auto;
+    background-color: colors(back1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 75px 0;
+
+    & > h1 {
+        @include head("our services");
+    }
+
+    .services-items {
+        width: 100%;
+        height: auto;
+        padding: 2em 0;
+        @include flexDisplay();
+
+        .container {
+            @include flexDisplay();
+            flex-wrap: wrap;
+
+            .item {
+                width: 30.7%;
+                height: auto;
+                border-radius: 4px;
+                margin: 0.7em;
+                background-color: colors(back1);
+                padding: 1em;
+                @include flexDisplay(column);
+                justify-content: flex-start;
+
+                div {
+                    width: 80px;
+                    height: 80px;
+                    margin: 0.8em;
+                    border-radius: 8px;
+                    background-color: #eeeeee;
+                    @include flexDisplay();
+
+                    img {
+                        width: auto;
+                        max-height: 50px;
+                    }
+                }
+
+                h1 {
+                    color: colors(back2);
+                    text-transform: capitalize;
+                    text-align: center;
+                    padding: 0.5rem;
+                    @include font(1.5em, 1.31);
+                }
+
+                p {
+                    color: colors(back2);
+                    text-transform: capitalize;
+                    text-align: center;
+                    opacity: 0.36;
+                    padding: 0.5rem;
+                    max-height: 130px;
+                    overflow: hidden;
+                    @include fontLit(1em, 1.25);
+
+                    @include media(phone) {
+                        max-height: none;
+                    }
+                }
+            }
+
+            @include media(tablet) {
+                flex-direction: column;
+
+                .item {
+                    width: 70%;
+                    margin: 0.7em 0;
+                }
+            }
+
+            @include media(phone) {
+                .item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

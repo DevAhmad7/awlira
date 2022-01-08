@@ -1,0 +1,19 @@
+@import "../../../styles/config";
+
+// style for header
+.awlira-contact-us {
+    width: 100%;
+    height: auto;
+    background-color: colors(back1);
+    padding-bottom: 75px;
+    @include flexDisplay();
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include media(tablet) {
+        padding-bottom: 0px;
+    }
+}

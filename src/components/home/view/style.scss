@@ -1,0 +1,78 @@
+@import "../../../styles/config";
+// varbels
+
+$htL: 70px;
+$htT: 60px;
+$htP: 50px;
+
+.flexDisplay {
+    @include flexDisplay();
+}
+
+// style for header
+.awlira-view {
+    width: 100%;
+    height: calc(100vh - #{$htL});
+    @include flexDisplay();
+    background-color: colors(back1);
+    background-image: url("/img/background/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .view {
+        height: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            text-transform: capitalize;
+            padding: 3rem;
+            @include font(2.7em, 1.31);
+            text-align: center;
+            color: #000000;
+
+            @include media(tablet) {
+                padding: 1rem;
+                font-size: 2em;
+            }
+        }
+
+        p {
+            color: colors(clr1);
+            text-transform: uppercase;
+            text-align: center;
+            padding: 3rem;
+            text-align: left;
+            @include font(2.7em, 1.31);
+
+            @include media(phone) {
+                padding: 3rem 0;
+                font-size: 2em;
+            }
+        }
+
+        a {
+            margin: 3em 0;
+            width: 322px;
+            height: 82px;
+            border-radius: 10px;
+            box-shadow: 0 5px 35px 0 rgba(15, 41, 68, 0.37);
+            text-transform: uppercase;
+            color: colors(back1);
+            background-color: colors(back2);
+            @include flexDisplay();
+            @include fontLit(1.5em, 1.32);
+            text-align: left;
+        }
+    }
+
+    @include media(tablet) {
+        height: calc(100vh - #{$htT});
+        background-image: url("/img/background/background-sm.png");
+    }
+    @include media(phone) {
+        height: calc(100vh - #{$htP});
+    }
+}

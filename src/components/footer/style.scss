@@ -1,0 +1,126 @@
+@import "../../styles/config";
+
+// style for header
+.awlira-footer {
+    width: 100%;
+    height: auto;
+    background-color: colors(back2);
+    background-image: url("/img/logo/icon.png");
+    background-repeat: no-repeat;
+    background-size: 14%;
+    background-position-x: -40px;
+    @include flexDisplay(column);
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: row;
+        padding: 2.5em 0;
+        position: relative;
+        left: 4%;
+
+        .footer-info {
+            width: 40%;
+            @include flexDisplay(column);
+            align-items: flex-start;
+
+            img {
+                width: 140px;
+            }
+
+            p {
+                margin: 1.5em 0px;
+                max-width: max-content;
+                @include fontLit(1em, 1.25);
+                font-weight: 300;
+                text-align: left;
+                color: #627385;
+            }
+
+            @include media(tablet) {
+                align-items: center;
+
+                p {
+                    max-width: 400px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .footer-links {
+            width: 60%;
+            @include flexDisplay();
+            align-items: flex-start;
+
+            .links {
+                width: 160px;
+                margin: 0 2em;
+
+                h1 {
+                    color: colors(clr1);
+                    text-transform: capitalize;
+                    text-align: left;
+                    margin-bottom: 0.5em;
+                    @include font(1.5em, 1.31);
+                }
+
+                .link {
+                    width: 100%;
+                    color: #627385;
+                    text-transform: lowercase;
+                    text-align: left;
+                    padding: 0.5em 0;
+                    display: flex;
+                    @include fontLit(0.8em, 1.29);
+
+                    i {
+                        margin-right: 7px;
+                    }
+                }
+            }
+        }
+
+        @include media(tablet) {
+            flex-direction: column;
+            left: 0%;
+
+            .footer-info {
+                width: 100%;
+            }
+            .footer-links {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .links {
+                    width: 100%;
+                    margin: 1em 0px;
+
+                    h1 {
+                        text-align: left;
+                        margin: 0px;
+                    }
+
+                    .link {
+                        padding: 0.5em 0 0.5em 1em;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-copy {
+        width: 100%;
+        height: 40px;
+        @include flexDisplay();
+        max-width: max-content;
+        @include fontLit(1em, 1.25);
+        text-align: left;
+        color: #627385;
+    }
+
+    @include media(tablet) {
+        background-size: 25%;
+    }
+}

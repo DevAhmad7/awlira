@@ -1,0 +1,68 @@
+@import "../../../styles/config";
+
+// style for header
+.awlira-techno {
+    width: 100%;
+    height: auto;
+    background-color: colors(back1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 75px 0;
+
+    & > h1 {
+        @include head("our technology");
+    }
+
+    .techno-items {
+        width: 100%;
+        height: auto;
+        padding: 2em 0;
+        @include flexDisplay();
+
+        .container {
+            @include flexDisplay();
+            flex-wrap: wrap;
+
+            .item {
+                width: 190px;
+                height: 200px;
+                border-radius: 10px;
+                background-color: #f8f8f8;
+                background: url("/img/techno/shape.png") no-repeat center center;
+                background-size: cover;
+                @include flexDisplay(column);
+
+                img {
+                    width: 70px;
+                }
+
+                h1 {
+                    color: colors(back1);
+                    text-transform: lowercase;
+                    text-align: center;
+                    position: relative;
+                    top: 20px;
+                    @include flexDisplay();
+                    @include fontLit(1.3em, 1.25);
+                }
+            }
+            .rec-dot {
+                background-color: colors(back2);
+                height: 7px;
+                width: 18px;
+                margin: 4px 12px;
+                border-radius: 1px;
+                border: 0px;
+                box-shadow: none;
+            }
+            .rec-dot_active {
+                background-color: colors(clr1);
+            }
+            button.rec-arrow {
+                display: none !important;
+            }
+        }
+    }
+}
